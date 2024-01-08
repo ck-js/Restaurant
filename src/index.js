@@ -1,10 +1,18 @@
-// import restaurant name 
-import restaurantName from "./page-load";
+// import function components from page-load.js
+import {restaurantName, restaurantImage } from "./page-load";
+// import css style file
+import './style.css'
+
+
+
 
 // access content output container
-const contentDiv = document.getElementById('content')
+const contentOutput = document.getElementById('content')
 
 
 // append restaurant name to content output
-contentDiv.appendChild(restaurantName())
+contentOutput.appendChild(restaurantName());
+
+// append restaurant image to content output
+contentOutput.appendChild(restaurantImage());
 

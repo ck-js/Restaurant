@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color: white;
+}
+.img-container img {
+    border: 5px solid yellowgreen;
+    background-image: url('./coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+}
