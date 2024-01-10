@@ -1,5 +1,5 @@
 // import function components from page-load.js
-import {restaurantName, restaurantImage, restaurantDescription } from "./page-load";
+import {restaurantName, restaurantImage, restaurantDescription, restaurantNav } from "./page-load";
 // import css style file
 import './style.css'
 
@@ -8,9 +8,11 @@ import './style.css'
 const contentOutput = document.getElementById('content')
 
 
-
 // append restaurant name to content output
 contentOutput.appendChild(restaurantName());
+
+// append nav to content output
+contentOutput.appendChild(restaurantNav())
 
 // append restaurant image to content output
 contentOutput.appendChild(restaurantImage());
