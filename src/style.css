@@ -21,7 +21,8 @@ font-size: 1.3rem;
     list-style-type: none;
     padding: 2vw;
     border-radius: 6px;
-    border: 2px solid yellowgreen;    
+    /* border: 2px solid yellowgreen;     */
+    cursor: pointer;
 }
 
 

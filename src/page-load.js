@@ -17,6 +17,7 @@ function restaurantNav() {
 navContainer.id = 'nav-container';
 // create ul element 
 const ulElement = document.createElement('ul');
+ulElement.id = 'nav-ul';
 // create array of list items
 const navItems = ['Breakfast', 'Lunch', 'Dinner']
 
@@ -30,7 +31,9 @@ liElement.textContent = navItems[i];
 // append li elements to ul element
 ulElement.appendChild(liElement);
 
-
+// liElement.addEventListener('click', (event) => {
+//     alert('hello' + event.target.textContent)
+// })
 }
 // append ul element to nav container
 navContainer.appendChild(ulElement)
@@ -40,16 +43,12 @@ return navContainer;
 }
 
 
-
 function restaurantImage() {
     const descriptionContainer = document.createElement('div');
     const imgContainer = document.createElement('div');
 
 descriptionContainer.id = 'description-container';
 imgContainer.id = 'img-container';
-
-
-
 
     const img = new Image();
     img.src = CoffeeImg;
@@ -78,10 +77,6 @@ div.appendChild(p)
 
 return div;
 
-
-
 }
-
-
 
 export {restaurantName, restaurantImage, restaurantDescription, restaurantNav  }; 
