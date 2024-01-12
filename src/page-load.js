@@ -25,6 +25,8 @@ const navItems = ['Breakfast', 'Lunch', 'Dinner']
 for (let i = 0; i < navItems.length; i++) {
 // create li element
 const liElement = document.createElement('li');
+// set id of list items
+liElement.id = navItems[i]
 // set text content of each li element
 liElement.textContent = navItems[i];
 
@@ -74,7 +76,6 @@ p.innerHTML = 'At our establishment, we take pride in ensuring that all of our d
 
 div.appendChild(h1)
 div.appendChild(p)
-
 return div;
 
 }

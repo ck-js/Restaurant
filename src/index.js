@@ -1,5 +1,10 @@
 // import function components from page-load.js
 import {restaurantName, restaurantImage, restaurantDescription, restaurantNav } from "./page-load";
+// import components from breakfast.js
+import { breakfastHeading, bakedSelection } from "./breakfast";
+
+
+
 // import css style file
 import './style.css'
 
@@ -32,7 +37,14 @@ for (let i = 0; i < liElements.length; i++) {
     const element = liElements[i];
     element.addEventListener('click', (event) => {
  // clear the elements in content container
-        ClearContentDom()
+        ClearContentDom();
+// determine which li item was clicked
+if (event.target.id === 'Breakfast') {
+    contentOutput.appendChild(breakfastHeading())
+    contentOutput.appendChild(bakedSelection())
+    
+}
+
 
 
     })
@@ -50,14 +62,8 @@ for (let i = 0; i < contentOutput.children.length; i++) {
 
 
 
-// import components from breakfast.js
-import { breakfastHeading } from "./breakfast";
 
 // contentOutput.appendChild(breakfastHeading())
-
-
-
-
 
 
 
