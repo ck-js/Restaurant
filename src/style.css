@@ -62,3 +62,18 @@ transform: translate(-50%, -50%);
 font-size: 0.7rem;
     }
 }
+
+
+.menu-item {
+    color: yellowgreen;
+    
+}
+.title-container {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+.title-container img {
+border-radius: 50%;    
+}
