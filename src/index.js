@@ -1,7 +1,8 @@
 // import function components from page-load.js
 import {restaurantName, restaurantImage, restaurantDescription, restaurantNav } from "./page-load";
 // import components from breakfast.js
-import { breakfastHeading, bakedSelection, breakfastSelection } from "./breakfast";
+import { breakfastHeading, bakedSelection, breakfastSelection,
+optionalOmeletteSelection } from "./breakfast";
 
 
 
@@ -43,6 +44,7 @@ if (event.target.id === 'Breakfast') {
     contentOutput.appendChild(breakfastHeading())
     contentOutput.appendChild(bakedSelection())
     contentOutput.appendChild(breakfastSelection())
+    contentOutput.appendChild(optionalOmeletteSelection())
 }
 
 

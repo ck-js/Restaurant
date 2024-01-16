@@ -187,8 +187,6 @@ createBreakfastMenuItem(
     110
 )
 
-
-
 // create function to loop through menu items array and append to html elements
 function loopedBreakfastMenuItems() {
     const menuItemContainer = document.createElement('div')   
@@ -242,4 +240,104 @@ parentContainer.appendChild(loopedBreakfastMenuItems())
 return parentContainer;
 }
 
-export {breakfastHeading, bakedSelection, breakfastSelection,  }
+
+
+
+
+
+// optional omelette selection section
+
+// array to store optional omelette menu items
+const optionalOmeletteMenuItemsArray = [];
+
+// function to create new menu item and add to array
+function createOptionalOmeletteMenuItem(title, description, price,vegan) {
+    const item = new MenuItem(title,description,price,vegan);
+    optionalOmeletteMenuItemsArray.push(item)
+    }
+
+createOptionalOmeletteMenuItem(
+    'Mushrooms',
+    '',
+    30
+)
+createOptionalOmeletteMenuItem(
+    'Mushrooms',
+    '',
+    30
+)
+createOptionalOmeletteMenuItem(
+    'Mushrooms',
+    '',
+    30
+)
+
+
+// create function to loop through menu items array and append to html elements
+function loopedOmeletteMenuItems() {
+const menuItemContainer1 = document.createElement('div')
+menuItemContainer1.id = 'menu-item-container-1';
+
+
+    const menuItemContainer = document.createElement('div')   
+    menuItemContainer.classList.add('menu-item')
+    
+for (let i = 0; i < optionalOmeletteMenuItemsArray.length; i++) {
+    const element = optionalOmeletteMenuItemsArray[i];
+console.log(element);
+
+    const menuItemTitleContainer = document.createElement('div');
+    menuItemTitleContainer.classList.add('title-container');
+    const menuItemTitle = document.createElement('h4');
+    const menuItemVeganIcon = document.createElement('img');
+    const menuItemDescription = document.createElement('p');
+    const menuItemPrice = document.createElement('p');
+
+    menuItemTitle.innerHTML = element.title;
+menuItemVeganIcon.src = VeganIcon;
+menuItemVeganIcon.alt = 'Vegan'
+menuItemVeganIcon.width = 50;
+menuItemVeganIcon.height = 50
+    menuItemDescription.innerHTML =element.description;
+    menuItemPrice.innerHTML = element.price;
+    
+    menuItemContainer.append(menuItemTitleContainer)
+    menuItemTitleContainer.appendChild(menuItemTitle)
+    menuItemTitleContainer.appendChild(menuItemPrice)
+    // check if vegan boolean value is true or false
+    if (element.vegan) {
+    menuItemTitleContainer.appendChild(menuItemVeganIcon);
+    
+    }
+    menuItemContainer1.appendChild(menuItemContainer)
+    
+    
+}
+return menuItemContainer1;
+
+}
+
+function optionalOmeletteSelection() {
+    
+    const parentContainer = document.createElement('div');
+    parentContainer.id = 'optional-omelette-selection-container';
+const optionalOmeletteSelectionTitle = document.createElement('h1');
+optionalOmeletteSelectionTitle.innerHTML = 'Optional Omelette Add Ons';
+
+// append optional omelette selection menu items to parent container
+
+parentContainer.appendChild(optionalOmeletteSelectionTitle);
+parentContainer.appendChild(loopedOmeletteMenuItems())
+
+
+return parentContainer;
+}
+
+
+
+
+
+
+export {breakfastHeading, bakedSelection, breakfastSelection,
+    optionalOmeletteSelection 
+}

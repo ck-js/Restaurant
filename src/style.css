@@ -66,6 +66,7 @@ font-size: 0.7rem;
 
 .menu-item {
     color: yellowgreen;
+    width: 50%;
     
 }
 .title-container {
@@ -77,3 +78,22 @@ align-items: center;
 .title-container img {
 border-radius: 50%;    
 }
+#menu-item-container-1 .menu-item {
+display: grid;
+grid-template-columns: repeat((2, 100px));
+grid-template-rows: repeat(2, 1fr);
+}
+.menu-item:nth-child(1) {
+color: black;
+}
+
+
+#optional-omelette-selection-container .title-container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+}
+
+
