@@ -257,20 +257,63 @@ function createOptionalOmeletteMenuItem(title, description, price,vegan) {
     }
 
 createOptionalOmeletteMenuItem(
-    'Mushrooms',
+    'Avocado',
     '',
-    30
+    70
 )
 createOptionalOmeletteMenuItem(
-    'Mushrooms',
+    'Smoked Streaky Bacon',
     '',
-    30
+    80
 )
 createOptionalOmeletteMenuItem(
-    'Mushrooms',
+    'Cold-Smoked Trout Ribons',
     '',
-    30
+    110
 )
+createOptionalOmeletteMenuItem(
+    'Grass-Fed Beef Boerewors Sausage',
+    '',
+    80
+)
+createOptionalOmeletteMenuItem(
+    'FreeRange Chicken',
+    '',
+    80
+)
+createOptionalOmeletteMenuItem(
+    'Goat Cheese',
+    '',
+    60
+)
+createOptionalOmeletteMenuItem(
+    'Button Mushrooms',
+    '',
+    50
+)
+createOptionalOmeletteMenuItem(
+    'Herbed Cherry Tomatoes',
+    '',
+    45
+)
+createOptionalOmeletteMenuItem(
+    'Feta Cheese',
+    '',
+    45
+)
+createOptionalOmeletteMenuItem(
+    'Sourdough SLice',
+    '',
+    20
+)
+createOptionalOmeletteMenuItem(
+    'Buckwheat Slice',
+    '',
+    40
+)
+
+
+
 
 
 // create function to loop through menu items array and append to html elements
@@ -287,28 +330,23 @@ for (let i = 0; i < optionalOmeletteMenuItemsArray.length; i++) {
 console.log(element);
 
     const menuItemTitleContainer = document.createElement('div');
-    menuItemTitleContainer.classList.add('title-container');
+    menuItemTitleContainer.className = 'title-container';
+    menuItemTitleContainer.id = i
+    const titleContentWrapper = document.createElement('div');
+    titleContentWrapper.classList.add('content-wrapper')
+
     const menuItemTitle = document.createElement('h4');
-    const menuItemVeganIcon = document.createElement('img');
-    const menuItemDescription = document.createElement('p');
     const menuItemPrice = document.createElement('p');
 
     menuItemTitle.innerHTML = element.title;
-menuItemVeganIcon.src = VeganIcon;
-menuItemVeganIcon.alt = 'Vegan'
-menuItemVeganIcon.width = 50;
-menuItemVeganIcon.height = 50
-    menuItemDescription.innerHTML =element.description;
     menuItemPrice.innerHTML = element.price;
     
-    menuItemContainer.append(menuItemTitleContainer)
-    menuItemTitleContainer.appendChild(menuItemTitle)
-    menuItemTitleContainer.appendChild(menuItemPrice)
-    // check if vegan boolean value is true or false
-    if (element.vegan) {
-    menuItemTitleContainer.appendChild(menuItemVeganIcon);
+    // menuItemContainer.append(menuItemTitleContainer)
+menuItemContainer.appendChild(menuItemTitleContainer)
+menuItemTitleContainer.appendChild(titleContentWrapper)
+    titleContentWrapper.appendChild(menuItemTitle)
+    titleContentWrapper.appendChild(menuItemPrice)
     
-    }
     menuItemContainer1.appendChild(menuItemContainer)
     
     
