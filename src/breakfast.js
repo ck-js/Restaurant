@@ -61,7 +61,7 @@ function loopMenuItems() {
     menuItemContainer.classList.add('menu-item')
 for (let i = 0; i < bakedSelectionMenuItemsArray.length; i++) {
     const element = bakedSelectionMenuItemsArray[i];
-console.log(element);
+
 
     const menuItemTitleContainer = document.createElement('div');
     menuItemTitleContainer.classList.add('title-container');
@@ -193,7 +193,7 @@ function loopedBreakfastMenuItems() {
     menuItemContainer.classList.add('menu-item')
 for (let i = 0; i < breakfastMenuItemsArray.length; i++) {
     const element = breakfastMenuItemsArray[i];
-console.log(element);
+
 
     const menuItemTitleContainer = document.createElement('div');
     menuItemTitleContainer.classList.add('title-container');
@@ -327,7 +327,7 @@ menuItemContainer1.id = 'menu-item-container-1';
     
 for (let i = 0; i < optionalOmeletteMenuItemsArray.length; i++) {
     const element = optionalOmeletteMenuItemsArray[i];
-console.log(element);
+
 
     const menuItemTitleContainer = document.createElement('div');
     menuItemTitleContainer.className = 'title-container';

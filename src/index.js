@@ -3,6 +3,10 @@ import {restaurantName, restaurantImage, restaurantDescription, restaurantNav } 
 // import components from breakfast.js
 import { breakfastHeading, bakedSelection, breakfastSelection,
 optionalOmeletteSelection } from "./breakfast";
+// import lunch module components
+import {
+    smallBitesSelection
+} from './lunch'
 
 
 
@@ -38,31 +42,43 @@ for (let i = 0; i < liElements.length; i++) {
     const element = liElements[i];
     element.addEventListener('click', (event) => {
  // clear the elements in content container
-        ClearContentDom();
+        
 // determine which li item was clicked
+if (event.target.id === 'Lunch') {
+    ClearContentDom(contentOutput);
+    contentOutput.appendChild(smallBitesSelection())
+    // contentOutput.appendChild(bakedSelection())
+    // contentOutput.appendChild(breakfastSelection())
+    // contentOutput.appendChild(optionalOmeletteSelection())
+
+
+}
+
 if (event.target.id === 'Breakfast') {
+    ClearContentDom(contentOutput);
     contentOutput.appendChild(breakfastHeading())
     contentOutput.appendChild(bakedSelection())
     contentOutput.appendChild(breakfastSelection())
     contentOutput.appendChild(optionalOmeletteSelection())
 }
-
-
-
     })
 
 }
-function ClearContentDom() {
+function ClearContentDom(parentElement) {
+    
     // loop through all child elements of content container
-for (let i = 0; i < contentOutput.children.length; i++) {
-    const childElements = contentOutput.children[i];
-    contentOutput.removeChild(childElements)
+// for (let i = 0; i < contentOutput.children.length; i++) {
+//     const childElements = contentOutput.children[i];
+//     contentOutput.removeChild(childElements)
     
-    
+
+while (parentElement.firstChild) {
+    parentElement.removeChild(parentElement.firstChild)
 }
+
+
 }
 
 
 
 
-// contentOutput.appendChild(breakfastHeading())
