@@ -5,7 +5,9 @@ import { breakfastHeading, bakedSelection, breakfastSelection,
 optionalOmeletteSelection } from "./breakfast";
 // import lunch module components
 import {
-    smallBitesSelection
+    smallBitesSelection,
+    houseBurgersSelection,
+    mainPlatesSelection
 } from './lunch'
 
 
@@ -47,8 +49,8 @@ for (let i = 0; i < liElements.length; i++) {
 if (event.target.id === 'Lunch') {
     ClearContentDom(contentOutput);
     contentOutput.appendChild(smallBitesSelection())
-    // contentOutput.appendChild(bakedSelection())
-    // contentOutput.appendChild(breakfastSelection())
+    contentOutput.appendChild(houseBurgersSelection())
+    contentOutput.appendChild(mainPlatesSelection())
     // contentOutput.appendChild(optionalOmeletteSelection())
 
 
@@ -78,6 +80,7 @@ while (parentElement.firstChild) {
 
 
 }
+
 
 
 
