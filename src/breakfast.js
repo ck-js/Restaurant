@@ -58,10 +58,13 @@ createBakedSelectionMenuItem(
 // create function to loop through menu items array and append to html elements
 function loopMenuItems() {
     const menuItemContainer = document.createElement('div')   
-    menuItemContainer.classList.add('menu-item')
+    menuItemContainer.classList.add('menu-item-container')
+
 for (let i = 0; i < bakedSelectionMenuItemsArray.length; i++) {
     const element = bakedSelectionMenuItemsArray[i];
 
+    const menuItem = document.createElement('div')
+    menuItem.classList.add('menu-item')
 
     const menuItemTitleContainer = document.createElement('div');
     menuItemTitleContainer.classList.add('title-container');
@@ -69,6 +72,7 @@ for (let i = 0; i < bakedSelectionMenuItemsArray.length; i++) {
     const menuItemVeganIcon = document.createElement('img');
     const menuItemDescription = document.createElement('p');
     const menuItemPrice = document.createElement('p');
+    menuItemPrice.classList.add('price')
 
     menuItemTitle.innerHTML = element.title;
 menuItemVeganIcon.src = VeganIcon;
@@ -78,15 +82,17 @@ menuItemVeganIcon.height = 50
     menuItemDescription.innerHTML =element.description;
     menuItemPrice.innerHTML = element.price;
     
-    menuItemContainer.append(menuItemTitleContainer)
+    menuItem.append(menuItemTitleContainer)
     menuItemTitleContainer.appendChild(menuItemTitle)
     // check if vegan boolean value is true or false
     if (element.vegan) {
     menuItemTitleContainer.appendChild(menuItemVeganIcon);
     }
-    menuItemContainer.appendChild(menuItemDescription)
-    menuItemContainer.appendChild(menuItemPrice)
+    menuItem.appendChild(menuItemDescription)
+    menuItem.appendChild(menuItemPrice)
     
+menuItemContainer.appendChild(menuItem)
+
 }
 return menuItemContainer;
 
@@ -132,59 +138,68 @@ createBreakfastMenuItem(
     'WARM OATS PORRIDGE',
     'rolled oats, chia seeds, granola sprinkle, salted butter, Ratel River raw honey drizzle (*contains milk)',
     140,
-    
+    true
 )
 createBreakfastMenuItem(
     'BUCKWHEAT & OAT FLAPJACKS',
     'banana, chunky peanut butter, coconut yoghurt, walnuts, toasted coconut flakes, golden syrup',
 240,
-
+true
 )
 createBreakfastMenuItem(
     'CROISSANT FRENCH TOAST',
     'homemade berry compote, fresh cream, Ratel River raw honey drizzle',
-    230
+    230,
+    true
 )
 createBreakfastMenuItem(
     'SMASHED AVOCADO TOAST',
     'two slices sourdough toast, tomato salsa, lemon wedge (optional extras available)',
     
-190
+190,
+true
 )
 createBreakfastMenuItem(
     '…CREAMY BREAKFAST RISOTTO',
     'smoked streaky bacon bits, spring onion, two poached Usana Farm eggs, cheese crisps',
-    290
+    290,
+    false
 )
 createBreakfastMenuItem(
     'SHAKSHUKA',
     'homemade spiced tomato, onion and red bell pepper sauce, two poached Usana Farm eggs, crispy chickpeas, fresh coriander, Proof Bakery sourdough toast, salted butter',
-    240
+    240,
+    true
 )
 createBreakfastMenuItem(
     'CLASSIC BACON & EGGS',
     'smoked streaky bacon, two Usana Farm eggs, mushrooms, herbed cherry tomatoes, Proof Bakery sourdough toast, salted butter',
-    250
+    250,
+    false
 )
 createBreakfastMenuItem(
     'SMOKED TROUT EGGS BENEDICT',
     'Usana Farm poached eggs, Three Streams cold-smoked trout ribbons, fresh baby leaf spinach, capers, lemon wedge, homemade hollandaise, Proof Bakery sourdough toast',
-    310
+    310,
+    false
 )
 createBreakfastMenuItem(
     'BACON EGGS BENEDICT',
     'Usana Farm poached eggs, smoked streaky bacon, fresh baby leaf spinach, homemade hollandaise, Proof Bakery sourdough toast',
-    270
+    270,
+    false
 )
 createBreakfastMenuItem(
     'VEGAN BENEDICT',
     'avocado, button mushroom, herbed cherry tomato, fresh baby leaf spinach, cranberries, cashew & turmeric hollandaise, Proof Bakery sourdough toast',
-    290
+    290,
+    true
 )
 createBreakfastMenuItem(
     'OMELETTE (PLAIN)',
     'three Usana Farm pasture eggs',
-    110
+    110,
+    false
 )
 
 // create function to loop through menu items array and append to html elements
@@ -201,6 +216,7 @@ for (let i = 0; i < breakfastMenuItemsArray.length; i++) {
     const menuItemVeganIcon = document.createElement('img');
     const menuItemDescription = document.createElement('p');
     const menuItemPrice = document.createElement('p');
+menuItemPrice.classList.add('price')
 
     menuItemTitle.innerHTML = element.title;
 menuItemVeganIcon.src = VeganIcon;
@@ -337,7 +353,7 @@ for (let i = 0; i < optionalOmeletteMenuItemsArray.length; i++) {
 
     const menuItemTitle = document.createElement('h4');
     const menuItemPrice = document.createElement('p');
-
+menuItemPrice.classList.add('price')
     menuItemTitle.innerHTML = element.title;
     menuItemPrice.innerHTML = element.price;
     

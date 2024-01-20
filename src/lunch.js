@@ -34,7 +34,7 @@ createSmallBitesMenuItem(
     'Caesar Salad',
     'gem lettuce, pecorino, bokkom dressing, anchovies, herbed sourdough croutons',
     240,
-    true
+    false
 )
 createSmallBitesMenuItem(
     'BURRATA & TOMATO SALAD',
@@ -52,17 +52,17 @@ createSmallBitesMenuItem(
 'CHICKEN LIVER PARFAIT',
 'butternut chutney, banana bread, crispy chicken skins',
     240,
-    true
+    false
 )
 createSmallBitesMenuItem(
     'STEAK TARTARE',
     'dry-aged sirloin, cured egg yolk, horseradish, capers, red onion, chives, lavosh crackers',
         300,
-        true
+        false
 )
 createSmallBitesMenuItem(
         '´BAKED CAMEMBERT',
-        'Fresh garlic, thymeloopHouseBurgers white wine, Proof Bakery sourdough toast, homemade orange marmalade',
+        'Fresh garlic, thymeloop HouseBurgers white wine, Proof Bakery sourdough toast, homemade orange marmalade',
             310,
             true
     )
@@ -102,27 +102,23 @@ menuItemVeganIcon.width = 50;
 }
 return menuItemContainer;
 
-
 }
 
 function smallBitesSelection() {
     const parentContainer = document.createElement('div');
     parentContainer.id = 'small-bites-selection-container';
 const servedDaily = document.createElement('h2');
-servedDaily.innerHTML = 'Breakfast Served Daily'
+servedDaily.innerHTML = 'Lunch Served Daily(11:30 - 16:30'
 const smallBitesTitle = document.createElement('h1');
-smallBitesTitle.innerHTML = 'Baked Selection ( 7:00 - 16:00 )';
+smallBitesTitle.innerHTML = 'Small Bites Selection';
 
 // append small bites selection menu items to parent container
 parentContainer.appendChild(servedDaily);
 parentContainer.appendChild(smallBitesTitle);
 parentContainer.appendChild(loopSmallBitesMenuItems())
 
-
 return parentContainer;
 }
-
-
 
  
 // house burgers sub section of lunch
@@ -184,16 +180,15 @@ return menuItemContainer;
 function houseBurgersSelection() {
     const parentContainer = document.createElement('div');
     parentContainer.id = 'house-burgers-selection-container';
-const servedDaily = document.createElement('h2');
-servedDaily.innerHTML = 'Breakfast Served Daily'
+// const servedDaily = document.createElement('h2');
+// servedDaily.innerHTML = 'House Burgers'
 const houseBurgerTitle = document.createElement('h1');
-houseBurgerTitle.innerHTML = 'Baked Selection ( 7:00 - 16:00 )';
+houseBurgerTitle.innerHTML = 'House Burgers';
 
 // append small bites selection menu items to parent container
-parentContainer.appendChild(servedDaily);
+// parentContainer.appendChild(servedDaily);
 parentContainer.appendChild(houseBurgerTitle);
 parentContainer.appendChild(loopHouseBurgersMenuItems())
-
 
 return parentContainer;
 }
@@ -282,13 +277,13 @@ return menuItemContainer;
 function mainPlatesSelection() {
     const parentContainer = document.createElement('div');
     parentContainer.id = 'main-plates-selection-container';
-const servedDaily = document.createElement('h2');
-servedDaily.innerHTML = 'Breakfast Served Daily'
+// const servedDaily = document.createElement('h2');
+// servedDaily.innerHTML = 'Breakfast Served Daily'
 const mainPlatesTitle = document.createElement('h1');
 mainPlatesTitle.innerHTML = 'Main Plates Selection ( 7:00 - 16:00 )';
 
 // append small bites selection menu items to parent container
-parentContainer.appendChild(servedDaily);
+// parentContainer.appendChild(servedDaily);
 parentContainer.appendChild(mainPlatesTitle);
 parentContainer.appendChild(loopMainPlatesMenuItems())
 
@@ -302,6 +297,7 @@ return parentContainer;
 
 
 export {
+    lunchHeading,
     smallBitesSelection,
     houseBurgersSelection,
     mainPlatesSelection

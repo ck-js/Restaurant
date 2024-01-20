@@ -5,6 +5,7 @@ import { breakfastHeading, bakedSelection, breakfastSelection,
 optionalOmeletteSelection } from "./breakfast";
 // import lunch module components
 import {
+    lunchHeading,
     smallBitesSelection,
     houseBurgersSelection,
     mainPlatesSelection
@@ -48,6 +49,7 @@ for (let i = 0; i < liElements.length; i++) {
 // determine which li item was clicked
 if (event.target.id === 'Lunch') {
     ClearContentDom(contentOutput);
+    contentOutput.appendChild(lunchHeading())
     contentOutput.appendChild(smallBitesSelection())
     contentOutput.appendChild(houseBurgersSelection())
     contentOutput.appendChild(mainPlatesSelection())
